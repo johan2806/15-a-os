@@ -1,0 +1,219 @@
+/* --- 1. Configuración General --- */
+:root {
+  --gold-color: #c9a24d;
+  --gold-gradient: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Lora', serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-serif);
+  
+  /* CAMBIO 1: Gris muy, muy suave (Casi blanco, pero elegante) */
+  background: #f2f2f2; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #4a4a4a;
+}
+
+/* --- 2. El "Cuadrito" (Contenedor) --- */
+.container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  
+  /* La imagen floral va AQUI ADENTRO */
+  background-image: url('fondo_floral.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Fondo blanco base por si la imagen tiene transparencia */
+  background-color: #ffffff;
+  
+  border-radius: 40px;
+  padding: 50px 30px;
+  
+  /* Sombra un poco más marcada para que resalte sobre el gris */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  position: relative;
+  
+  overflow: visible; 
+  z-index: 1;
+}
+
+/* --- 3. Tipografía Dorada --- */
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-color);
+}
+
+.script-font {
+  font-family: var(--font-script);
+}
+
+.title-main {
+  font-size: 2.5rem; 
+  display: block;
+  margin-bottom: 30px;
+}
+
+/* --- 4. Nombre Samantha (SOLUCIÓN A LA 'S') --- */
+.name-title {
+  font-size: 5rem;
+  
+  /* CAMBIO 2: Damos altura para que quepa el rulo de arriba */
+  line-height: 1.4; 
+  
+  margin: 0;
+  
+  /* CAMBIO 3: Como la línea es más alta, subimos más el texto para que quede igual */
+  margin-top: -100px; 
+  
+  position: relative; 
+  z-index: 10;
+  
+  /* Espacio a los lados y ARRIBA para proteger la letra */
+  padding-top: 15px; 
+  padding-left: 20px; 
+  padding-right: 20px;
+  
+  /* Compensamos para centrar */
+  margin-left: -10px; 
+
+  /* Sombra suave */
+  filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.8));
+  
+  transform: rotate(-3deg); 
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  color: #555; 
+  background: rgba(255,255,255,0.6); 
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* --- 5. Foto Principal (Ovalo) --- */
+.foto-wrapper {
+  position: relative;
+  width: 200px; 
+  height: 260px; 
+  margin: 0 auto;
+  padding: 6px;
+  background: var(--gold-gradient);
+  border-radius: 50%; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  z-index: 2; 
+}
+
+.foto-principal img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-sizing: border-box;
+}
+
+/* --- 6. Botones y Upload --- */
+.upload-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--gold-color);
+  border-radius: 50px;
+  color: var(--gold-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.9); 
+}
+
+.custom-file-upload:hover {
+  background: #fff8e1;
+}
+
+.file-name-display {
+  font-size: 0.8rem;
+  color: #666;
+  min-height: 18px;
+}
+
+.btn-share {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background: var(--gold-gradient);
+  color: white;
+  font-size: 1.2rem;
+  font-family: var(--font-script);
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(191, 149, 63, 0.4);
+  transition: transform 0.2s;
+}
+
+.btn-share:hover:not(:disabled) {
+  transform: scale(1.03);
+}
+
+.btn-share:disabled {
+  opacity: 0.5;
+  cursor: default;
+  background: #ccc;
+  box-shadow: none;
+}
+
+/* --- Mensajes --- */
+.message-box {
+  min-height: 50px;
+  margin-top: 15px;
+}
+.hidden { display: none; }
+.success-icon { font-size: 2.5rem; color: #28a745; animation: bounceIn 0.8s; }
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- Responsive Móvil --- */
+@media (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+  .name-title {
+    font-size: 4rem; 
+    /* Ajuste para móvil también */
+    margin-top: -85px; 
+  }
+  .foto-wrapper {
+    width: 170px;
+    height: 220px;
+  }
+}

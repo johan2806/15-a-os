@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis 15 Años - Sara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="floral-decor top-left"></div>
+  <div class="floral-decor bottom-right"></div>
+
+  <div class="container">
+    
+    <div class="header-decor">
+        <span class="gold-text script-font title-main">Mis 15 Años</span>
+    </div>
+
+    <div class="foto-wrapper">
+        <div class="foto-principal">
+          <img src="Quinciañera.jpeg" alt="Foto de la quinceañera">
+        </div>
+    </div>
+
+    <h1 class="gold-text script-font name-title">Sara</h1>
+    <p class="intro-text">Gracias por acompañarme en este día tan especial. ¡Comparte tu mejor recuerdo conmigo!</p>
+
+    <div class="upload-section">
+        <input type="file" id="fileInput" accept="image/*" hidden>
+        
+        <label for="fileInput" class="custom-file-upload" id="uploadLabel">
+            <i class="fas fa-camera"></i> Elegir una foto linda
+        </label>
+        <span id="fileName" class="file-name-display">Ninguna foto seleccionada aún</span>
+
+        <button onclick="subirFoto()" class="btn-share" id="shareBtn" disabled>
+            <i class="fas fa-heart"></i> Compartir mi recuerdo
+        </button>
+    </div>
+
+    <div id="mensaje-container" class="message-box">
+        <div class="success-animation hidden">
+            <i class="fas fa-check-circle success-icon"></i>
+        </div>
+        <p id="mensaje"></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
